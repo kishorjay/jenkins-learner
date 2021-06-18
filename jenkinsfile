@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Started Pipe') {
+            steps {
+                echo 'intiated'
+            }
+        }
+            
+        stage('Devjob') {
+			steps {
+				build quietPeriod: 2, job: 'Devjob'
+			}
+        }
+        stage('Testjob2') {
+			steps {
+				build quietPeriod: 2, job: 'Testjob2'
+        }
+        }
+    }
+}
