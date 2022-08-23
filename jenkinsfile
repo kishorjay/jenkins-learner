@@ -13,7 +13,7 @@ pipeline {
 				echo 'performing build stage'
 			}
         }
-        parellel{
+        parellel {
 	stage('Test') {
 			steps {
 				echo 'performing test stage'
