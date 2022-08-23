@@ -13,8 +13,8 @@ pipeline {
 				echo 'performing build stage'
 			}
         }
-		stage('Run Parellels'){
-        parellel {
+	stage('Run Parellels') {
+                 parellel {
 			stage('Test') {
 				steps {
 					echo 'performing test stage'
