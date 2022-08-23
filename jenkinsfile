@@ -13,6 +13,7 @@ pipeline {
 				echo 'performing build stage'
 			}
         }
+	stage('Parelle stages') {
         parellel {
 	stage('Test') {
 			steps {
@@ -24,6 +25,7 @@ pipeline {
 				echo 'performing deploy stage'
         }
         }
+	}
 	}
     }
 }
