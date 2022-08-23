@@ -8,15 +8,11 @@ pipeline {
             }
         }
             
-        stage('Devjob') {
+        stage('Multi branch pipe') {
 			steps {
-				build quietPeriod: 2, job: 'Devjob'
+				echo 'my multi-branch pipe'
 			}
         }
-        stage('Testjob2') {
-			steps {
-				build quietPeriod: 2, job: 'Testjob2'
-        }
-        }
+        
     }
 }
