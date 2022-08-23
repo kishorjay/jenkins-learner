@@ -14,7 +14,7 @@ pipeline {
 			}
         }
 		stage('Parellels') {
-        parellel {
+        parallel {
 			stage('Test') {
 				steps {
 					echo 'performing test stage'
