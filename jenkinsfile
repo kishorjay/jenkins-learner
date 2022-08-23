@@ -1,31 +1,31 @@
 pipeline {
     agent any
+
     stages {
-        stage('Run Tests') {
-            parallel {
-                stage('Test On Windows') {
-                   
-                    steps {
-                        echo "wind"
-                    }
-                    post {
-                        always {
-                            echo "always post"
-                        }
-                    }
-                }
-                stage('Test On Win 2') {
-                    
-                    steps {
-                        echo "wind1"
-                    }
-                    post {
-                        always {
-                            echo "always post1"
-                        }
-                    }
-                }
+        stage('Started Pipe') {
+            steps {
+                echo 'intiated'
             }
         }
+            
+        stage('Build') {
+			steps {
+				echo 'performing build stage'
+			}
+        }
+		stage('Run Parellels'){
+        parellel {
+	    stage('Test') {
+			steps {
+				echo 'performing test stage'
+        }
+        }
+        stage('Deploy') {
+			steps {
+				echo 'performing deploy stage'
+        }
+        }
+	} 
     }
+	}
 }
