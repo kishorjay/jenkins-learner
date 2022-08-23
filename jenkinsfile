@@ -2,19 +2,8 @@ pipeline {
     agent any
 
     stages {
-        stage('Started Pipe') {
-            steps {
-                echo 'intiated'
-            }
-        }
-            
-        stage('Build') {
-			steps {
-				echo 'performing build stage'
-			}
-        }
-	stage('Run Parellels') {
-                 parellel {
+	    stage('Run Parellels'){
+         parellel {
 			stage('Test') {
 				steps {
 					echo 'performing test stage'
@@ -27,5 +16,17 @@ pipeline {
 			}
 	} 
    }
+        stage('Started Pipe') {
+            steps {
+                echo 'intiated'
+            }
+        }
+            
+        stage('Build') {
+			steps {
+				echo 'performing build stage'
+			}
+        }
+
   }
 }
