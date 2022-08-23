@@ -15,17 +15,17 @@ pipeline {
         }
 		stage('Run Parellels'){
         parellel {
-	    stage('Test') {
-			steps {
-				echo 'performing test stage'
-        }
-        }
-        stage('Deploy') {
-			steps {
-				echo 'performing deploy stage'
-        }
-        }
+			stage('Test') {
+				steps {
+					echo 'performing test stage'
+			}
+			}
+			stage('Deploy') {
+				steps {
+					echo 'performing deploy stage'
+			}
+			}
 	} 
-    }
-	}
+   }
+  }
 }
