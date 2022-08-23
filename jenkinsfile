@@ -8,14 +8,19 @@ pipeline {
             }
         }
             
-        stage('Devjob') {
+        stage('Build') {
 			steps {
-				build quietPeriod: 2, job: 'Devjob'
+				echo 'performing build stage'
 			}
         }
-        stage('Testjob2') {
+        stage('Test') {
 			steps {
-				build quietPeriod: 2, job: 'Testjob2'
+				echo 'performing test stage'
+        }
+        }
+        stage('Deploy') {
+			steps {
+				echo 'performing deploy stage'
         }
         }
     }
