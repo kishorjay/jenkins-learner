@@ -11,7 +11,8 @@ pipeline {
         stage('Build') {
 			steps {
 				echo 'performing build stage'
-				def kj = bat(script : 'echo hi', returnStdout: true)
+				def kj = ""
+			        kj = bat(script : "echo hello", returnStdout: true)
 				echo kj
 			}
         }
