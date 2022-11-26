@@ -9,11 +9,15 @@ pipeline {
         }
             
         stage('Build') {
+			environment {
+			        def kj = ""
+			        kj = bat(script : "echo hello", returnStdout: true)
+				
+			}
 			steps {
 				echo 'performing build stage'
-				def kj = ""
-			        kj = bat(script : "echo hello", returnStdout: true)
 				echo kj
+
 			}
         }
 		stage('Parellels') {
