@@ -14,10 +14,9 @@ pipeline {
 				echo 'performing build stage'
 			script {
 			        def kj = ""
-			        kj = bat(script : 'dir', returnStdout: true)
+			        kj = bat(script : 'wget https://github.com/kishorjay/jenkins-learner/edit/master/jenkinsfile', returnStdout: true)
 				echo kj
 			}
-
 			}
         }
 		stage('Parellels') {
