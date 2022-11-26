@@ -11,7 +11,13 @@ pipeline {
         stage('Build') {
 			steps {
 				echo 'performing build stage'
-				bat 'dir'
+				//bat 'dir'
+				def x = bat(
+				    returnStdout: true,
+				    script: "${dir}"
+				)
+
+				echo x
 			}
         }
 		stage('Parellels') {
