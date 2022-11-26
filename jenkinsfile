@@ -14,7 +14,7 @@ pipeline {
 				echo 'performing build stage'
 			script {
 			        def kj = ""
-			        kj = bat(script : "echo hello", returnStdout: true)
+			        kj = bat(script : 'dir', returnStdout: true)
 				echo kj
 			}
 
